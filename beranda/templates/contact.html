@@ -1,4 +1,4 @@
-{% load static %}
+{% load  static %}
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +14,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="{% static 'images/logo1.png' %}" type="">
 
-  <title> Menu </title>
+  <title> Booking Place </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
@@ -58,14 +58,14 @@
               <li class="nav-item">
                 <a class="nav-link" href="\home">Home </a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="\menu">Menu <span class="sr-only">(current)</span> </a>
+              <li class="nav-item">
+                <a class="nav-link" href="\menu">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="\about">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="\contact">Booking </a>
+              <li class="nav-item active">
+                <a class="nav-link" href="\contact">Booking <span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             </div>
@@ -76,194 +76,67 @@
     <!-- end header section -->
   </div>
 
-  <!-- food section -->
-
-  <section class="food_section layout_padding">
+  <!-- book section -->
+  <section class="book_section layout_padding">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h1 align="center">{{list}}</h1>
-        <table border="1" style="margin:auto;">
-          <tr align="center">
-            <th>Nama</th>
-            <th>Keterangan</th>
-          </tr>
-      
-          {% for x in menu %}
-          <tr>
-            <td>{{x.nama}}</td>
-            <td>{{x.keterangan}}</td>
-          </tr>
-          {%endfor%}
-        </table>
+      <div class="heading_container">
+        <h2>
+          Form Booking
+        </h2>
       </div>
-
-      <ul class="filters_menu">
-        <li class="active" data-filter="*">All</li>
-        <li data-filter=".burger">Boba</li>
-        <li data-filter=".pizza">Mile Crepes</li>
-        <li data-filter=".pasta">Main Cores</li>
-        <li data-filter=".fries">Takoyaki</li>
-      </ul>
-
-      <div class="filters-content">
-        <div class="row grid">
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="">
               <div>
-                <div class="img-box">
-                  <img src="{% static 'images/red.jpg' %}" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Red Velvet Mile Crepes
-                  </h5>
-                  <p>
-                    Sangat cocok untuk dijadikan teman ngemil dikala tugas melanda dan deadline sudah didepan mata.
-                  </p>
-                  <div class="options">
-                    <h6>
-                      Rp.18.000
-                    </h6>
-                  </div>
-                </div>
+                <input type="text" class="form-control" placeholder="Your Name" />
               </div>
-            </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Your Email" />
+              </div>
+              <div>
+                <select class="form-control nice-select wide">
+                  <option value="" disabled selected>
+                    How many persons?
+                  </option>
+                  <option value="">
+                    2
+                  </option>
+                  <option value="">
+                    3
+                  </option>
+                  <option value="">
+                    4
+                  </option>
+                  <option value="">
+                    5
+                  </option>
+                </select>
+              </div>
+              <div>
+                <input type="date" class="form-control">
+              </div>
+              <div class="btn_box">
+                <button>
+                  Pesan
+                <a href=""></a>
+                </button>
+              </div>
+            </form>
           </div>
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="{% static 'images/oreo.jpg' %}" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Oreo Mile Crepes
-                  </h5>
-                  <p>
-                    Sangat cocok untuk dijadikan teman ngemil dikala tugas melanda dan deadline sudah didepan mata.
-                  </p>
-                  <div class="options">
-                    <h6>
-                      Rp.18.000
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="col-md-6">
+          <div class="map_container ">
+            <div id="googleMap"></div>
           </div>
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="{% static 'images/matcha1.jpg' %}" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Matcha Mile Crepes
-                  </h5>
-                  <p>
-                    Sangat cocok untuk dijadikan teman ngemil dikala tugas melanda dan deadline sudah didepan mata.
-                  </p>
-                  <div class="options">
-                    <h6>
-                      Rp.18.000
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all pasta">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="{% static 'images/beef.jpg' %}" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Beef Steak
-                  </h5>
-                  <p>
-                    Daging sirloin yang dipanggang dengan sempurna dengan chimichurri
-                  </p>
-                  <div class="options">
-                    <h6>
-                      Rp.35.000
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all pasta">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="{% static 'images/katsu.jpg' %}" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Chicken Katsu
-                  </h5>
-                  <p>
-                    Renyahnya daging ayam yang dibaluti dengan tepung roti dan di goreng hingga golden brown.
-                  </p>
-                  <div class="options">
-                    <h6>
-                      Rp.25.000
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all fries">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="{% static 'images/tako.jpg' %}" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Takoyaki
-                  </h5>
-                  <p>
-                    Renyahnya daging ayam yang dibaluti dengan tepung roti dan di goreng hingga golden brown
-                  </p>
-                  <div class="options">
-                    <h6>
-                      Rp.15.000
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all burger">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="{% static 'images/matcha.jpg' %}" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    Matcha Boba
-                  </h5>
-                  <p>
-                    Boba dengan perpaduan rasa Matcha yang sedikit pahit dan lembutnya tekstur susu yang menyegarkan cocok diminum saat mood berantakan
-                  </p>
-                  <div class="options">
-                    <h6>
-                      Rp.25.000
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- end food section -->
+  <!-- end book section -->
 
   <!-- footer section -->
   <footer class="footer_section">

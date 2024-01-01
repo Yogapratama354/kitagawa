@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Beranda(models.Model):
+class Home(models.Model):
     nama = models.CharField(max_length=150)
     keterangan = models.TextField()
 
